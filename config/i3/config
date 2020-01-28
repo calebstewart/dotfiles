@@ -151,11 +151,11 @@ bindsym $mod+r mode "resize"
 mode "screenshot" {
 
 	# Rectangle capture
-	bindsym r mode "default"; exec --no-startup-id $HOME/.local/bin/screenshot-rectangle
+	bindsym r mode "default"; exec --no-startup-id $HOME/.dotfiles/scripts/screenshot-rectangle
 	# Window capture
-	bindsym w mode "default"; exec --no-startup-id $HOME/.local/bin/screenshot-window
+	bindsym w mode "default"; exec --no-startup-id $HOME/.dotfiles/scripts/screenshot-window
 	# Whole-screen capture
-	bindsym space mode "default"; exec --no-startup-id $HOME/.local/bin/screenshot-everything
+	bindsym space mode "default"; exec --no-startup-id $HOME/.dotfiles/scripts/screenshot-everything
 
 	# Return to default
 	bindsym Return mode "default"
@@ -169,15 +169,15 @@ bindsym $mod+s mode "screenshot"
 
 # Show/hide the polybar when the modifier is pressed (133 is Super_L)
 # The key code can be found with `xev` experimentally
-bindcode --release $mod_code exec $HOME/github/hideIt.sh/hideIt.sh --name '^polybar-bottom_.*$' --hide
-bindcode $mod_code exec $HOME/github/hideIt.sh/hideIt.sh --name '^polybar-bottom_.*$' --show
+bindcode --release $mod_code exec hideIt.sh --name '^polybar-bottom_.*$' --hide
+bindcode $mod_code exec hideIt.sh --name '^polybar-bottom_.*$' --show
 
 # Start notification daemon
 exec_always --no-startup-id killall dunst;/usr/bin/dunst
 
 # Kill previous polybar and reload it
 # This will alos start the hideIt script to hide polybar automatically
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.dotfiles/scripts/launch-polybar.sh
 
 # Set backdrop
 exec_always --no-startup-id feh --bg-scale $HOME/.config/i3/backdrop
