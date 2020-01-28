@@ -33,7 +33,10 @@ ln -s "$HOME/.dotfiles/config/tmux/tmux.conf.local" "$HOME/.tmux.conf.local"
 info "installing ${MAGENTA}zsh${RST} configuration"
 ln -s $HOME/.dotfiles/config/zsh/ohmyzsh $HOME/.oh-my-zsh
 ln -s $HOME/.dotfiles/config/zsh/zshrc $HOME/.zshrc
+mkdir -p $HOME/.oh-my-zsh/custom/plugins
+mkdir -p $HOME/.oh-my-zsh/custom/themes
 ln -s $HOME/.dotfiles/config/zsh/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 ln -s $HOME/.dotfiles/config/zsh/zsh-syntax-highlighting $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 ln -s $HOME/.dotfiles/config/zsh/zui $HOME/.oh-my-zsh/custom/plugins/zui
+ln -s $HOME/.dotfiles/config/zsh/spaceship-prompt/spaceship.zsh-theme $HOME/.oh-my-zsh/custom/themes/spaceship.zsh-theme
 
