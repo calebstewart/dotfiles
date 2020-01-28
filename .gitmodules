@@ -1,0 +1,15 @@
+[submodule "config/tmux/oh-my-tmux"]
+	path = config/tmux/oh-my-tmux
+	url = git@github.com:gpakosz/.tmux.git
+[submodule "config/zsh/ohmyzsh"]
+	path = config/zsh/ohmyzsh
+	url = git@github.com:ohmyzsh/ohmyzsh.git
+[submodule "config/zsh/zsh-autosuggestions"]
+	path = config/zsh/zsh-autosuggestions
+	url = git@github.com:zsh-users/zsh-autosuggestions.git
+[submodule "config/zsh/zui"]
+	path = config/zsh/zui
+	url = git@github.com:zdharma/zui.git
+[submodule "config/zsh/zsh-syntax-highlighting"]
+	path = config/zsh/zsh-syntax-highlighting
+	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
