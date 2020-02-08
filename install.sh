@@ -3,7 +3,7 @@
 GREEN=`tput setaf 2`
 YELLOW=`tput setaf 3`
 MAGENTA=`tput setaf 5`
-RST=`tput set sgr0`
+RST=`tput sgr0`
 
 function info {
 	echo "[${GREEN}*${RST}] $@"
