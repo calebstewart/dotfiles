@@ -18,9 +18,9 @@ done
 polybar bottom 2>~/.config/polybar/polybar.log &
 
 # Ensure polybar is hidden after a key-combo
-i3subscribe binding | while read -r event; do
-	hideIt.sh -N '^polybar-bottom_.*$' --hide 2>/dev/null >/dev/null
+$HOME/.dotfiles/scripts/i3subscribe binding | while read -r event; do
+	$HOME/.dotfiles/scripts/hideIt.sh/hideIt.sh -N '^polybar-bottom_.*$' --hide 2>/dev/null >/dev/null
 done &
 
 # Start hideIt.sh to manage polybar visibility
-hideIt.sh -N '^polybar-bottom_.*$' -S -d bottom -w
+$HOME/.dotfiles/scripts/hideIt.sh/hideIt.sh -N '^polybar-bottom_.*$' -S -d bottom -w

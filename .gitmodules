@@ -16,3 +16,6 @@
 [submodule "config/zsh/spaceship-prompt"]
 	path = config/zsh/spaceship-prompt
 	url = https://github.com/denysdovhan/spaceship-prompt.git
+[submodule "scripts/hideIt.sh"]
+	path = scripts/hideIt.sh
+	url = https://github.com/calebstewart/hideIt.sh
