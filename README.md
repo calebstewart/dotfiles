@@ -24,4 +24,21 @@ distribution with the same applications installed.
 
 ## Installation
 
+Clone the repository to `$HOME/.dotfiles`:
+
+```
+$ git clone --recursive https://github.com/calebstewart/dotfiles .dotfiles
+```
+
+Run the install script:
+
+```
+$ cd .dotfiles
+$ ./install.sh
+```
+
+You can now change your default shell to `zsh` to activate most of the
+configurations installed previously. This script will not install any dependant
+programs. It only sets up the configuration files in the correct locations.
+
 
