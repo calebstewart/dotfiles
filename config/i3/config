@@ -114,7 +114,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)bash ** no matches found
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
@@ -135,7 +135,7 @@ mode "resize" {
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 pptbash ** no matches found
         bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
@@ -167,10 +167,36 @@ mode "screenshot" {
 # Enter screenshot mode
 bindsym $mod+s mode "screenshot"
 
+# Change to common display modes
+mode "display" {
+	
+	# Change to single screen mode
+	bindsym s mode "default"; exec --no-startup-id xrandr --output HDMI-1 --off --output eDP-1 --auto
+
+	# Change to dual screen mode
+	bindsym d mode "default"; exec --no-startup-id xrandr --output eDP-1 --auto --output HDMI-1 --right-of eDP-1 --mode 3840x2160
+
+	# Change to "mirror" mode
+	bindsym m mode "default"; exec --no-startup-id xrandr --output eDP-1 --auto --output HDMI-1 --same-as eDP-1
+
+	# Change brightness
+	bindsym Up exec --no-startup-id $HOME/.dotfiles/scripts/backlight up
+	bindsym Down exec --no-startup-id $HOME/.dotfiles/scripts/backlight down
+
+	# Return to default
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+F8 mode "default"
+
+}
+
+# Enter display mode
+bindsym $mod+F8 mode "display"
+
 # Show/hide the polybar when the modifier is pressed (133 is Super_L)
 # The key code can be found with `xev` experimentally
-bindcode --release $mod_code exec $HOME/.dotfiles/scripts/hideIt.sh/hideIt.sh --name '^polybar-bottom_.*$' --hide
-bindcode $mod_code exec $HOME/.dotfiles/scripts/hideIt.sh/hideIt.sh --name '^polybar-bottom_.*$' --show
+bindcode --release $mod_code exec --no-startup-id $HOME/.dotfiles/scripts/hideIt.sh/hideIt.sh --name '^polybar-bottom_.*$' --hide
+bindcode $mod_code exec --no-startup-id $HOME/.dotfiles/scripts/hideIt.sh/hideIt.sh --name '^polybar-bottom_.*$' --show
 
 # Start notification daemon
 exec_always --no-startup-id killall dunst;/usr/bin/dunst

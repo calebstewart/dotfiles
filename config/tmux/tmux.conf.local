@@ -287,3 +287,4 @@ set -g mouse on
 
 # Fix terminal cursor stuff
 set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
+set -sa terminal-overrides '*:RGB'

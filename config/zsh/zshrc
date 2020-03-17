@@ -29,7 +29,10 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # Setup custom ls alias
-alias ls='ls --color=tty --group-directories-first'
+#alias ls='ls --color=tty --group-directories-first'
+alias ls="exa -l --group-directories-first"
+alias yeet="git push"
+alias yoink="git pull"
 
 # Set path and editor selections
 export PATH="$HOME/.local/bin:$PATH"
@@ -38,6 +41,9 @@ export EDITOR=`/usr/bin/which nvim`
 
 # virsh default connection is system not user!
 export LIBVIRT_DEFAULT_URI=qemu:///system
+
+# Disable automatic `cd` on directory name
+unset AUTO_CD
 
 if [[ $DISPLAY ]]; then
 	# Run tmux if this is an GUI interactive shell
