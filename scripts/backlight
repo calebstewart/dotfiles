@@ -13,6 +13,7 @@ BACKLIGHT=`echo /sys/class/backlight/**`
 MAX_VALUE=`cat $BACKLIGHT/max_brightness`
 CURRENT_VALUE=`cat $BACKLIGHT/brightness`
 STEP=$(( MAX_VALUE*10/100 ))
+ID=10000 # Notification ID
 
 # Increase or decrease and check bounds
 if [ "$1" = "up" ]; then
@@ -27,5 +28,9 @@ else
 	fi
 fi
 
+PERC_VALUE=$(( NEXT_VALUE*100/MAX_VALUE ))
+dunstify -a "Brightness" -u low -i "video-display" -r "$ID" \
+	"${PERC_VALUE}%" "$(~/.dotfiles/scripts/get-progress 10 "<b> </b>" " " $PERC_VALUE)" 
+
 # Write brightness
-echo "$NEXT_VALUE" > $BACKLIGHT/brightness
+echo "$NEXT_VALUE" > $BACKLIGHT/brightness 

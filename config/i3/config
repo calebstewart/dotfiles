@@ -39,6 +39,7 @@ bindsym $mod+semicolon focus right
 
 # Lock the screen
 bindsym $mod+Control+l exec --no-startup-id $HOME/.dotfiles/scripts/lock-screen
+bindsym $mod+Control+Shift+l exec --no-startup-id $HOME/.dotfiles/scripts/toggle-lock
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -193,6 +194,15 @@ mode "display" {
 # Enter display mode
 bindsym $mod+F8 mode "display"
 
+# Adjust volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/.dotfiles/scripts/volume up
+bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/.dotfiles/scripts/volume down
+bindsym XF86AudioMute exec --no-startup-id $HOME/.dotfiles/scripts/volume mute
+
+# Adjust brightness
+bindysm XF86MonBrightnessUp exec --no-startup-id $HOME/.dotfiles/scripts/backlight down
+bindsym XF86MonBrightnessDown exec --no-startup-id $HOME/.dotfiles/scripts/backlight down
+
 # Show/hide the polybar when the modifier is pressed (133 is Super_L)
 # The key code can be found with `xev` experimentally
 bindcode --release $mod_code exec --no-startup-id $HOME/.dotfiles/scripts/hideIt.sh/hideIt.sh --name '^polybar-bottom_.*$' --hide
@@ -203,7 +213,7 @@ exec_always --no-startup-id killall dunst;/usr/bin/dunst
 
 # Kill previous polybar and reload it
 # This will alos start the hideIt script to hide polybar automatically
-exec_always --no-startup-id $HOME/.dotfiles/scripts/launch-polybar.sh
+#exec_always --no-startup-id $HOME/.dotfiles/scripts/launch-polybar.sh
 
 # Set backdrop
 exec_always --no-startup-id feh --bg-scale $HOME/.config/i3/backdrop
