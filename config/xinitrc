@@ -17,5 +17,8 @@ xrdb -merge ~/.Xresources
 # Update custom keymap
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 
+# Start the compositor
+picom -b
+
 # Start i3
 exec i3 > ~/.i3.log 2>&1

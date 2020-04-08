@@ -19,3 +19,9 @@
 [submodule "scripts/hideIt.sh"]
 	path = scripts/hideIt.sh
 	url = https://github.com/calebstewart/hideIt.sh
+[submodule "config/rofi-menus"]
+	path = config/rofi-menus
+	url = https://gitlab.com/calebstewart/rofi-menus
+[submodule "config/vim-plug"]
+	path = config/vim-plug
+	url = https://github.com/junegunn/vim-plug

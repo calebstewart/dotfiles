@@ -29,13 +29,17 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # Start rofi
-bindsym $mod+d exec --no-startup-id "rofi -combi-modi window,drun -theme sidetab -font \\"hack 20\\" -show combi -run-shell-command '{terminal} -e \\" {cmd}; read -n 1 -s\\"'"
+#bindsym $mod+d exec --no-startup-id "rofi -combi-modi window,drun -theme slate -font \\"hack 20\\" -show combi -run-shell-command '{terminal} -e \\" {cmd}; read -n 1 -s\\"'"
+bindsym $mod+d exec --no-startup-id $HOME/.local/bin/rofi-appsmenu
+bindsym $mod+n exec --no-startup-id $HOME/.local/bin/rofi-networkmenu
+bindsym $mod+l exec --no-startup-id $HOME/.local/bin/rofi-i3layoutmenu
+bindsym $mod+Shift+v exec --no-startup-id $HOME/.local/bin/rofi-nmvpnmenu
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+#bindsym $mod+j focus left
+#bindsym $mod+k focus down
+#bindsym $mod+l focus up
+#bindsym $mod+semicolon focus right
 
 # Lock the screen
 bindsym $mod+Control+l exec --no-startup-id $HOME/.dotfiles/scripts/lock-screen
