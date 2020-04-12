@@ -34,6 +34,8 @@ bindsym $mod+d exec --no-startup-id $HOME/.local/bin/rofi-appsmenu
 bindsym $mod+n exec --no-startup-id $HOME/.local/bin/rofi-networkmenu
 bindsym $mod+l exec --no-startup-id $HOME/.local/bin/rofi-i3layoutmenu
 bindsym $mod+Shift+v exec --no-startup-id $HOME/.local/bin/rofi-nmvpnmenu
+bindsym $mod+p exec --no-startup-id $HOME/.local/bin/rofi-powermenu
+bindsym $mod+m exec --no-startup-id $HOME/.local/bin/rofi-mpdmenu
 
 # change focus
 #bindsym $mod+j focus left
@@ -196,7 +198,7 @@ mode "display" {
 }
 
 # Enter display mode
-bindsym $mod+F8 mode "display"
+bindsym $mod+F8 exec --no-startup-id $HOME/.dotfiles/scripts/display.sh
 
 # Adjust volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/.dotfiles/scripts/volume up
