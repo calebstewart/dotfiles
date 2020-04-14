@@ -211,8 +211,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id $HOME/.dotfiles/scripts/backl
 
 # Show/hide the polybar when the modifier is pressed (133 is Super_L)
 # The key code can be found with `xev` experimentally
-bindcode --release $mod_code exec --no-startup-id $HOME/.dotfiles/scripts/hideIt.sh/hideIt.sh --name '^polybar-bottom_.*$' --hide
-bindcode $mod_code exec --no-startup-id $HOME/.dotfiles/scripts/hideIt.sh/hideIt.sh --name '^polybar-bottom_.*$' --show
+#bindcode --release $mod_code exec --no-startup-id $HOME/.dotfiles/scripts/hideIt.sh/hideIt.sh --name '^polybar-bottom_.*$' --hide
+#bindcode $mod_code exec --no-startup-id $HOME/.dotfiles/scripts/hideIt.sh/hideIt.sh --name '^polybar-bottom_.*$' --show
 
 # Start notification daemon
 exec_always --no-startup-id killall dunst;/usr/bin/dunst

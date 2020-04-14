@@ -24,7 +24,9 @@ fi
 # Perform the selected operation
 case $chosen in
 	$single_icon)
-		xrandr --output "$SECONDARY_DISPLAY" --off --output "$BUILTIN_DISPLAY" --auto
+		xrandr --auto
+		[[ -z "$SECONDARY_DISPLAY" ]] || xrandr --output "$SECONDARY_DISPLAY" --off
+		xrandr --output "$BUILTIN_DISPLAY" --auto
 		;;
 	$dual_icon)
 		xrandr --output "$BUILTIN_DISPLAY" --auto \
